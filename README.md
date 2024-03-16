@@ -8,8 +8,10 @@
 - [/] idea sketch
 - [x] select web css framework -> daisyUI
     - [Install daisyUI as a Tailwind CSS plugin — Tailwind CSS Components ( version 4 update is here )](https://daisyui.com/docs/install/)
-- [ ] select web ui framework -> svelteKit
+- [x] select web ui framework -> svelteKit
     - [SvelteKit • Web development, streamlined](https://kit.svelte.dev/)
+- [/] setup sveltekit, tailwind, daisyUI
+    - [Install Tailwind CSS with SvelteKit - Tailwind CSS](https://tailwindcss.com/docs/guides/sveltekit)
 
 ---
 
