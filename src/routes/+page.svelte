@@ -1,6 +1,8 @@
-<span class="countdown">
-  <span style="--value:{value};"></span>
-</span>
+<div class="grid place-items-center w-full h-screen">
+  <span class="countdown">
+    <span style="--value:{value};"></span>
+  </span>
+</div>
 
 <script>
   let value = 5;
