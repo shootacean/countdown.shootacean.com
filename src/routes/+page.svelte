@@ -1,18 +1,12 @@
-<div class="grid place-items-center w-full h-screen">
-  <span class="countdown">
-    <span style="--value:{value};"></span>
-  </span>
-</div>
-
 <script>
-  let value = 5;
-  const timer = setInterval(() => {
-    value -= 1;
-  }, 1000);
-  setTimeout(() => {
-    clearInterval(timer);
-  }, 5000);
+  import Countdown from "./Countdown.svelte";
 </script>
+
+<div class="grid place-items-center w-full h-screen">
+  <main>
+    <Countdown />
+  </main>
+</div>
 
 <style lang="postcss">
   :global(html) {
