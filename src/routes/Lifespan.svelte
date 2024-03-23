@@ -17,18 +17,18 @@
    */
   const HEALTHY_LIFESPAN = 72.68;
 
+  const now = new Date();
+
 </script>
 
 <section>
   <h2 class="text-left">Lifespan ( {LIFESPAN} years old )</h2>
   <progress class="progress progress-primary w-full" value={LIFESPAN-currentAge} max={LIFESPAN}></progress>
-  <Countdown end={new Date(new Date().getFullYear() + LIFESPAN-currentAge, new Date().getMonth(), new Date().getDate())} />
+  <Countdown end={new Date(now.getFullYear() + LIFESPAN-currentAge, now.getMonth(), now.getDate())} />
 </section>
 
 <section class="mt-8">
   <h2 class="text-left">Healthy Lifespan ( {HEALTHY_LIFESPAN} years old )</h2>
   <progress class="progress progress-success w-full" value={HEALTHY_LIFESPAN-currentAge} max={HEALTHY_LIFESPAN}></progress>
-  <Countdown end={new Date(new Date().getFullYear() + HEALTHY_LIFESPAN-currentAge, new Date().getMonth(), new Date().getDate())} />
+  <Countdown end={new Date(now.getFullYear() + HEALTHY_LIFESPAN-currentAge, now.getMonth(), now.getDate())} />
 </section>
-
-
