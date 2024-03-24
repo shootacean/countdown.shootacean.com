@@ -17,17 +17,13 @@
    */
   const HEALTHY_LIFESPAN = 72.68;
   /**
-   * 余命
+   * 残りの活動時間(起きている時間)
    */
-  const REMAINING_LIFESPAN = HEALTHY_LIFESPAN - currentAge;
-  /**
-   * 活動時間(起きている時間)
-   */
-  const REMAINING_ACTIVITY_TIME = REMAINING_LIFESPAN * (8/24);
+  const ACTIVITY_TIME = HEALTHY_LIFESPAN * (16/24);
   /**
    * 使用済みの活動時間
    */
-   const USED_ACTIVITY_TIME = REMAINING_ACTIVITY_TIME * (8/24);
+   const USED_ACTIVITY_TIME = currentAge * (16/24);
 
   const now = new Date();
 
@@ -41,12 +37,12 @@
 
 <section class="mt-8">
   <h2 class="text-left">Healthy Lifespan ( {HEALTHY_LIFESPAN} years old )</h2>
-  <progress class="progress progress-success w-full" value={REMAINING_LIFESPAN} max={HEALTHY_LIFESPAN}></progress>
-  <Countdown end={new Date(now.getFullYear() + REMAINING_LIFESPAN, now.getMonth(), now.getDate())} />
+  <progress class="progress progress-success w-full" value={HEALTHY_LIFESPAN - currentAge} max={HEALTHY_LIFESPAN}></progress>
+  <Countdown end={new Date(now.getFullYear() + (HEALTHY_LIFESPAN - currentAge), now.getMonth(), now.getDate())} />
 </section>
 
 <section class="mt-8">
-  <h2 class="text-left">Activity Time ( Healthy Lifespan * (8 / 24) )</h2>
-  <progress class="progress progress-success w-full" value={USED_ACTIVITY_TIME} max={REMAINING_ACTIVITY_TIME}></progress>
-  <Countdown end={new Date(now.getFullYear() + REMAINING_ACTIVITY_TIME, now.getMonth(), now.getDate())} />
+  <h2 class="text-left">Activity Time ( Healthy Lifespan * (16 / 24) )</h2>
+  <progress class="progress progress-success w-full" value={ACTIVITY_TIME-USED_ACTIVITY_TIME} max={ACTIVITY_TIME}></progress>
+  <Countdown end={new Date(now.getFullYear() + (ACTIVITY_TIME-USED_ACTIVITY_TIME), now.getMonth(), now.getDate())} />
 </section>
